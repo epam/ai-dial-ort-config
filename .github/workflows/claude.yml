@@ -1,0 +1,52 @@
+name: Claude
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.issue.number || github.event.pull_request.number }}
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  claude:
+    if: |
+      contains(github.event.comment.body, '@claude') &&
+      (github.event_name == 'pull_request_review_comment' || github.event.issue.pull_request)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write # For committing changes Claude is asked to make
+      id-token: write # For the action's GitHub App authentication
+      issues: write # For responding on issues
+      pull-requests: write # For responding on / updating pull requests
+      actions: read # Lets Claude read CI results on PRs
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: true # TODO: set false when upstream issue is resolved https://github.com/anthropics/claude-code-action/issues/1236
+      # Claude Code discovers project skills under .claude/skills; this repo keeps
+      # the single source of truth in .agents/skills, so expose it without copying.
+      - name: Expose repository skills to Claude Code
+        run: |
+          mkdir -p .claude
+          ln -s ../.agents/skills .claude/skills
+      - name: Run Claude Code
+        id: claude
+        uses: anthropics/claude-code-action@fad22eb3fa582b7357fc0ea48af6645851b884fd # v1.0.161
+        with:
+          anthropic_api_key: ${{ secrets.DIAL_API_KEY }}
+          claude_args: |
+            --verbose
+            --model anthropic.claude-sonnet-4-6
+            --max-turns 50
+            --allowedTools "Glob,Grep,LS,Read,Edit,Write,Task,Skill,WebFetch,Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh issue view:*)"
+        env:
+          ANTHROPIC_BASE_URL: "${{ vars.DIAL_CORE_URL }}/anthropic"
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.DIAL_API_KEY }}
+          CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: 1

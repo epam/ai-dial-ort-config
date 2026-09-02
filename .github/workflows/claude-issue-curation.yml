@@ -1,0 +1,67 @@
+name: Claude Issue Curation
+
+on:
+  issues:
+    types: [opened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  curation:
+    if: github.event.issue.state == 'open'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write # For creating the curation branch and committing files
+      id-token: write # For the action's GitHub App authentication
+      issues: write # For posting the tracking comment on the issue
+      pull-requests: write # For opening the resulting pull request
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: true # TODO: set false when upstream issue is resolved https://github.com/anthropics/claude-code-action/issues/1236
+      # Claude Code discovers project skills under .claude/skills; this repo keeps
+      # the single source of truth in .agents/skills, so expose it without copying.
+      - name: Expose repository skills to Claude Code
+        run: |
+          mkdir -p .claude
+          ln -s ../.agents/skills .claude/skills
+      - name: Run Claude Code
+        id: claude
+        uses: anthropics/claude-code-action@fad22eb3fa582b7357fc0ea48af6645851b884fd # v1.0.161
+        with:
+          anthropic_api_key: ${{ secrets.DIAL_API_KEY }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            ISSUE NUMBER: ${{ github.event.issue.number }}
+            ISSUE TITLE: ${{ github.event.issue.title }}
+
+            A new issue was opened. Read the issue title and body below and decide whether it is about an ORT package license/curation problem (for example ORT/evaluator rule violations such as NO_LICENSE_IN_DEPENDENCY, UNMAPPED_DECLARED_LICENSE, GENERIC_IN_DEPENDENCY, COPYLEFT_IN_DEPENDENCY, COPYLEFT_LIMITED_IN_DEPENDENCY, UNHANDLED_LICENSE, or any missing/invalid/unmappable/incompletely-detected license metadata for a package).
+
+            ISSUE BODY:
+            ${{ github.event.issue.body }}
+
+            RULES:
+              1. The repository is already checked out on the default branch.
+              2. If the issue is NOT about an ORT package license/curation problem, do NOT change any files and do NOT open a pull request. Post one short comment on the issue saying it is out of scope for automated curation, then stop.
+              3. If the issue IS about an ORT package license/curation problem, you MUST use the `ort-package-curations` skill to do the work. Follow the skill exactly, including independently verifying the REAL license before writing any curation. If the evidence is ambiguous, conflicting, or missing, do NOT guess: post a comment with your findings explaining why no curation was written, and stop.
+              4. When the skill produces one or more curation files (and any required `license-classifications.yml` change), create a new branch named `claude/curation-issue-${{ github.event.issue.number }}`, commit the changes with a clear message that references the package id(s), e.g. `feat(curations): Conclude license for PyPI::emoji`, and push it.
+              5. Open the pull request by running `gh pr create`. For PR body, summarize what you did: the package id(s), the resolved SPDX/LicenseRef expression, the curation field used, and a link to the evidence. Keep it concise. The PR body MUST contain "Closes #${{ github.event.issue.number }}". Include that PR URL in your summary comment.
+              6. Never add `Generated with [Claude Code](https://claude.ai/code)`, this is treated as spam by the moderation system.
+          track_progress: true
+          use_sticky_comment: true
+          claude_args: |
+            --verbose
+            --model anthropic.claude-sonnet-4-6
+            --max-turns 50
+            --allowedTools "Glob,Grep,LS,Read,Edit,Write,Task,Skill,WebFetch,Bash(git checkout:*),Bash(git switch:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh pr create:*),Bash(gh pr view:*),mcp__github_comment__update_claude_comment"
+        env:
+          GH_TOKEN: ${{ github.token }} # Authenticates the gh CLI used to open the pull request
+          ANTHROPIC_BASE_URL: "${{ vars.DIAL_CORE_URL }}/anthropic"
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.DIAL_API_KEY }}
+          CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: 1
