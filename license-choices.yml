@@ -1,0 +1,16 @@
+---
+# Global license choices applied to every ORT scan that uses this configuration
+# directory. Uses the same schema as the '.ort.yml' license_choices block.
+#
+# A choice is only valid for licenses combined with the SPDX 'OR' operator, and
+# the 'choice' must be a valid subset of the 'given' expression. Project-level
+# choices in a repository's '.ort.yml' take precedence over these global ones.
+#
+# Policy: prefer the most permissive license whenever a genuine choice is offered.
+repository_license_choices:
+  - given: "GPL-2.0-only OR MIT"
+    choice: "MIT"
+  - given: "GPL-3.0-or-later OR MIT"
+    choice: "MIT"
+  - given: "EPL-2.0 OR GPL-2.0-only OR LGPL-2.1-only"
+    choice: "EPL-2.0"
