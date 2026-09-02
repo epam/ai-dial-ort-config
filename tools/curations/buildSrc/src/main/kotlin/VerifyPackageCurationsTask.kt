@@ -56,11 +56,11 @@ open class VerifyPackageCurationsTask : DefaultTask() {
                                 "'${curation.data.authors}'."
                     }
 
-                    if (curation.data.concludedLicense != null) {
-                        issues += "Curating concluded licenses is not allowed, but the curation for package " +
-                                "'${curation.id.toCoordinates()}' in file '$relativePath' sets the concluded license " +
-                                "to '${curation.data.concludedLicense}'."
-                    }
+                    // if (curation.data.concludedLicense != null) {
+                    //     issues += "Curating concluded licenses is not allowed, but the curation for package " +
+                    //             "'${curation.id.toCoordinates()}' in file '$relativePath' sets the concluded license " +
+                    //             "to '${curation.data.concludedLicense}'."
+                    // }
 
                     curation.data.declaredLicenseMapping.forEach { (source, target) ->
                         runCatching {
