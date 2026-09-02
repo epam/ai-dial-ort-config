@@ -1,0 +1,6 @@
+- id: "PyPI::llvmlite:(,1.0.0["
+  curations:
+    comment: |
+      llvmlite is licensed under BSD-2-Clause AND Apache-2.0 WITH LLVM-exception, see:
+      https://github.com/numba/llvmlite/blob/v0.46.0/LICENSE
+    concluded_license: "BSD-2-Clause AND Apache-2.0 WITH LLVM-exception"

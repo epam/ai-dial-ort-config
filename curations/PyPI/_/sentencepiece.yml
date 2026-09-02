@@ -1,0 +1,6 @@
+- id: "PyPI::sentencepiece:(,1.0.0["
+  curations:
+    comment: |
+      The package is licensed under Apache-2.0, see:
+      https://github.com/google/sentencepiece/blob/v0.2.0/LICENSE
+    concluded_license: "Apache-2.0"

@@ -1,0 +1,7 @@
+- id: "PyPI::fsspec:(,2100.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/fsspec/filesystem_spec/blob/2024.6.1/LICENSE
+    declared_license_mapping:
+      "BSD License": "BSD-3-Clause"

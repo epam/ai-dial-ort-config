@@ -1,0 +1,7 @@
+- id: "PyPI::nvidia-nvshmem-cu12:(,4.0.0["
+  curations:
+    comment: |
+      NVSHMEM's main license is Apache-2.0 (bundled third-party components add
+      BSD-3-Clause and public-domain parts), see:
+      https://github.com/NVIDIA/nvshmem/blob/devel/License.txt
+    concluded_license: "Apache-2.0 AND BSD-3-Clause"

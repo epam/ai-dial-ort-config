@@ -1,0 +1,6 @@
+- id: "PyPI::aidial-adapter-anthropic:(,1.0.0["
+  curations:
+    comment: |
+      The package is licensed under Apache-2.0, see:
+      https://github.com/epam/ai-dial-adapter-anthropic/blob/0.17.0/LICENSE
+    concluded_license: "Apache-2.0"

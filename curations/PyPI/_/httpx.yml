@@ -1,0 +1,7 @@
+- id: "PyPI::httpx:(,1.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/encode/httpx/blob/0.25.2/LICENSE.md
+    declared_license_mapping:
+      "BSD License": "BSD-3-Clause"

@@ -1,0 +1,7 @@
+- id: "PyPI::pyinstrument:(,5.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/joerick/pyinstrument/blob/v4.6.1/LICENSE
+    declared_license_mapping:
+      "BSD License": "BSD-3-Clause"

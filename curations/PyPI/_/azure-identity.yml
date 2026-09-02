@@ -1,0 +1,6 @@
+- id: "PyPI::azure-identity:(,2.0.0["
+  curations:
+    comment: |
+      The package is licensed under MIT, see:
+      https://github.com/Azure/azure-sdk-for-python/blob/azure-identity_1.25.1/sdk/identity/azure-identity/LICENSE
+    concluded_license: "MIT"

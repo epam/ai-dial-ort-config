@@ -1,0 +1,6 @@
+- id: "PyPI::nvidia-nccl-cu12:(,3.0.0["
+  curations:
+    comment: |
+      NCCL is licensed under BSD-3-Clause, see:
+      https://github.com/NVIDIA/nccl/blob/v2.27.5-1/LICENSE.txt
+    concluded_license: "BSD-3-Clause"

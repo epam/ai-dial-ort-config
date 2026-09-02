@@ -1,0 +1,6 @@
+- id: "PyPI::docarray:(,1.0.0["
+  curations:
+    comment: |
+      DocArray is licensed under Apache-2.0, see:
+      https://github.com/docarray/docarray/blob/v0.39.1/LICENSE.md
+    concluded_license: "Apache-2.0"

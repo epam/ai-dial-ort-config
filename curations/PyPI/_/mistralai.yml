@@ -1,0 +1,6 @@
+- id: "PyPI::mistralai:(,3.0.0["
+  curations:
+    comment: |
+      The package is licensed under Apache-2.0, see:
+      https://github.com/mistralai/client-python/blob/v2.4.3/LICENSE
+    concluded_license: "Apache-2.0"

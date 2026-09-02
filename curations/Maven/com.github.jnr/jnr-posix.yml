@@ -1,0 +1,6 @@
+- id: "Maven:com.github.jnr:jnr-posix:(,4.0.0["
+  curations:
+    comment: |
+      The library is tri-licensed under EPL-2.0 OR GPL-2.0-only OR LGPL-2.1-only, see:
+      https://github.com/jnr/jnr-posix/blob/jnr-posix-3.1.21/LICENSE.txt
+    concluded_license: "EPL-2.0 OR GPL-2.0-only OR LGPL-2.1-only"

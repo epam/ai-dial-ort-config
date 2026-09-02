@@ -1,0 +1,9 @@
+- id: "PyPI::nvidia-cublas-cu12:(,13.0.0["
+  curations:
+    comment: |
+      The package is part of the NVIDIA CUDA Toolkit; it declares 'NVIDIA Proprietary
+      Software', covered by the CUDA Toolkit Supplement to the SLA for NVIDIA SDKs, see:
+      https://docs.nvidia.com/cuda/eula/index.html#cuda-toolkit-supplement-to-software-license-agreement-for-nvidia-software-development-kits
+    concluded_license: "LicenseRef-scancode-nvidia-cuda-supplement-2020"
+    declared_license_mapping:
+      "NVIDIA Proprietary Software": "LicenseRef-scancode-nvidia-cuda-supplement-2020"

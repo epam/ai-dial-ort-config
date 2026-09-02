@@ -1,0 +1,6 @@
+- id: "PyPI::nvidia-nvtx-cu12:(,13.0.0["
+  curations:
+    comment: |
+      NVTX (NVIDIA Tools Extension) is licensed under Apache-2.0 WITH LLVM-exception, see:
+      https://github.com/NVIDIA/NVTX/blob/release-v3/LICENSE.txt
+    concluded_license: "Apache-2.0 WITH LLVM-exception"
