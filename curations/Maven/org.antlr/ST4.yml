@@ -1,0 +1,7 @@
+- id: "Maven:org.antlr:ST4:(,5.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/antlr/stringtemplate4/blob/ST4-4.3.4/LICENSE.txt
+    declared_license_mapping:
+      "The BSD License": "BSD-3-Clause"

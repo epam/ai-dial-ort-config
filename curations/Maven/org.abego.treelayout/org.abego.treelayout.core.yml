@@ -1,0 +1,7 @@
+- id: "Maven:org.abego.treelayout:org.abego.treelayout.core:(,2.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/abego/treelayout/blob/v1.0.3/org.abego.treelayout/src/LICENSE.TXT
+    declared_license_mapping:
+      "BSD 3-Clause \"New\" or \"Revised\" License (BSD-3-Clause)": "BSD-3-Clause"
