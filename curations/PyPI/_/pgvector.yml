@@ -1,0 +1,6 @@
+- id: "PyPI::pgvector:(,1.0.0["
+  curations:
+    comment: |
+      The library is licensed under MIT, see:
+      https://github.com/pgvector/pgvector-python/blob/v0.4.2/LICENSE.txt
+    concluded_license: "MIT"
