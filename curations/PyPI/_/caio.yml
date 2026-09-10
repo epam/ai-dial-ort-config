@@ -1,0 +1,6 @@
+- id: "PyPI::caio:(,1.0.0["
+  curations:
+    comment: |
+      The library is licensed under Apache-2.0, see:
+      https://github.com/mosquito/caio/blob/0.9.25/COPYING
+    concluded_license: "Apache-2.0"
