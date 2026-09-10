@@ -1,0 +1,6 @@
+- id: "NPM::ansi-color:(,1.0.0["
+  curations:
+    comment: |
+      The package is licensed under BSD-3-Clause, see:
+      https://github.com/loopj/commonjs-ansi-color/blob/master/LICENSE
+    concluded_license: "BSD-3-Clause"
