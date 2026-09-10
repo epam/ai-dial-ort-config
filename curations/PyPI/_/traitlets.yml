@@ -1,0 +1,7 @@
+- id: "PyPI::traitlets:(,6.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/ipython/traitlets/blob/v5.14.3/LICENSE
+    declared_license_mapping:
+      "BSD License": "BSD-3-Clause"
