@@ -1,0 +1,7 @@
+- id: "PyPI::requests-oauthlib:(,3.0.0["
+  curations:
+    comment: |
+      The library is licensed under ISC (despite the PyPI classifier 'BSD License'), see:
+      https://github.com/requests/requests-oauthlib/blob/v2.0.0/LICENSE
+    declared_license_mapping:
+      "BSD License": "ISC"
