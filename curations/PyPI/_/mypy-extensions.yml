@@ -1,0 +1,6 @@
+- id: "PyPI::mypy-extensions:(,2.0.0["
+  curations:
+    comment: |
+      The library is licensed under MIT, see:
+      https://github.com/python/mypy_extensions/blob/1.1.0/LICENSE
+    concluded_license: "MIT"
