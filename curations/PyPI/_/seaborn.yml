@@ -1,0 +1,7 @@
+- id: "PyPI::seaborn:(,1.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/mwaskom/seaborn/blob/v0.13.2/LICENSE.md
+    declared_license_mapping:
+      "BSD License": "BSD-3-Clause"
