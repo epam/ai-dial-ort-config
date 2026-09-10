@@ -1,0 +1,10 @@
+- id: "PyPI::sentry-sdk:(,2.58.0["
+  curations:
+    comment: |
+      The library is licensed under MIT, see:
+      https://github.com/getsentry/sentry-python/blob/2.54.0/LICENSE
+      The BSD License classifier in setup.py was a stale/incorrect entry; the actual
+      LICENSE file and license field confirm MIT. Fixed in 2.58.0, see:
+      https://github.com/getsentry/sentry-python/releases/tag/2.58.0
+    declared_license_mapping:
+      "BSD License": "MIT"
