@@ -1,0 +1,7 @@
+- id: "PyPI::scikit-network:(,1.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/sknetwork-team/scikit-network/blob/v0.33.5/LICENSE
+    declared_license_mapping:
+      "BSD License": "BSD-3-Clause"
