@@ -1,0 +1,6 @@
+- id: "PyPI::ipykernel:(,7.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/ipython/ipykernel/blob/v6.30.1/LICENSE
+    concluded_license: "BSD-3-Clause"
