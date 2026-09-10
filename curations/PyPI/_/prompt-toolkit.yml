@@ -1,0 +1,7 @@
+- id: "PyPI::prompt-toolkit:(,4.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/prompt-toolkit/python-prompt-toolkit/blob/3.0.51/LICENSE
+    declared_license_mapping:
+      "BSD License": "BSD-3-Clause"
