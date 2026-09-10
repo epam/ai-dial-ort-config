@@ -1,0 +1,7 @@
+- id: "PyPI::nbformat:(,6.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/jupyter/nbformat/blob/v5.10.4/LICENSE
+    declared_license_mapping:
+      "BSD License": "BSD-3-Clause"
