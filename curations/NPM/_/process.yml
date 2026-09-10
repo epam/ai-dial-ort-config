@@ -1,0 +1,6 @@
+- id: "NPM::process:(,1.0.0["
+  curations:
+    comment: |
+      The package is MIT-licensed; the LICENSE file and package.json both confirm MIT, see:
+      https://github.com/defunctzombie/node-process/blob/master/LICENSE
+    concluded_license: "MIT"
