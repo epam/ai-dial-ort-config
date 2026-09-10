@@ -1,0 +1,6 @@
+- id: "PyPI::rpds-py:(,1.0.0["
+  curations:
+    comment: |
+      The library is licensed under MIT, see:
+      https://github.com/crate-py/rpds/blob/v0.27.0/LICENSE
+    concluded_license: "MIT"
