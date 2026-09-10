@@ -1,0 +1,7 @@
+- id: "PyPI::emoji:(,3.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause (New BSD License), see:
+      https://github.com/carpedm20/emoji/blob/v2.15.0/LICENSE.txt
+    declared_license_mapping:
+      "BSD License": "BSD-3-Clause"
