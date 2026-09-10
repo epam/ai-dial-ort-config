@@ -1,0 +1,7 @@
+- id: "PyPI::odfpy:(,2.0.0["
+  curations:
+    comment: |
+      The library is dual-licensed under GPL-2.0-or-later OR Apache-2.0. ORT only detected
+      the GPL branch; the Apache alternative is documented in the README and LICENSE files, see:
+      https://github.com/eea/odfpy/blob/release-1.4.1/README.md
+    concluded_license: "GPL-2.0-or-later OR Apache-2.0"
