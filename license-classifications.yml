@@ -1621,6 +1621,9 @@ categorizations:
   categories:
   - "proprietary-free"
   - "include-in-notice-file"
+- id: "LicenseRef-ort-Artifex-Commercial-License"
+  categories:
+  - "commercial"
 - id: "LicenseRef-scancode-3com-microcode"
   categories:
   - "permissive"
