@@ -1,0 +1,7 @@
+- id: "PyPI::omegaconf:(,3.0.0["
+  curations:
+    comment: |
+      The library is licensed under BSD-3-Clause, see:
+      https://github.com/omry/omegaconf/blob/v2.3.0/LICENSE
+    declared_license_mapping:
+      "BSD License": "BSD-3-Clause"
