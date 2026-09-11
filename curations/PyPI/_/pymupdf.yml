@@ -1,0 +1,8 @@
+- id: "PyPI::pymupdf:(,2.0.0["
+  curations:
+    comment: |
+      The library is dual-licensed under AGPL-3.0-only or the Artifex Commercial License.
+      The COPYING file at this tag contains the GNU Affero General Public License v3 text;
+      see: https://github.com/pymupdf/PyMuPDF/blob/1.27.2.3/COPYING
+    declared_license_mapping:
+      "Dual Licensed - GNU AFFERO GPL 3.0 or Artifex Commercial License": "AGPL-3.0-only OR LicenseRef-scancode-commercial-license"
